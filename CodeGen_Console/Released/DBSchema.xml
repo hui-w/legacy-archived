@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="DBSchema.xslt"?>
+<tables>
+  <table name="Channel">
+    <column name="ChannelId" dataType="String" fieldSize="32" isPrimary="true" />
+    <column name="DisplayName" dataType="String" fieldSize="50" />
+    <column name="Url" dataType="String" fieldSize="100" />
+    <column name="SignInName" dataType="String" fieldSize="50" />
+    <column name="Password" dataType="String" fieldSize="50" />
+    <column name="Description" dataType="String" fieldSize="100" />
+    <column name="VisitTime" dataType="Int64" />
+    <column name="VisitIp" dataType="String" fieldSize="50" />
+    <column name="VisitCount" dataType="Int32" />
+    <column name="Status" dataType="ChannelStatusEnum" defaultValue="ChannelStatusEnum.Public" />
+  </table>
+  <table name="Category">
+    <column name="CategoryId" dataType="String" fieldSize="32" isPrimary="true" />
+    <column name="Alias" dataType="String" fieldSize="30" />
+    <column name="DisplayName" dataType="String" fieldSize="50" />
+    <column name="DisplayOrder" dataType="Int32" />
+    <column name="ContentCount" dataType="Int32" />
+    <column name="LevelCode" dataType="String" fieldSize="50" />
+    <column name="Status" dataType="CategoryStatusEnum" defaultValue="CategoryStatusEnum.Private" />
+    <column name="ParentId" dataType="String" fieldSize="32" />
+    <column name="ChannelId" dataType="String" fieldSize="32" />
+  </table>
+  <table name="Comment">
+    <column name="CommentId" dataType="String" fieldSize="32" isPrimary="true" />
+    <column name="DocId" dataType="String" fieldSize="32" />
+    <column name="Body" dataType="String" fieldSize="500" />
+    <column name="Status" dataType="CommentStatusEnum" defaultValue="CommentStatusEnum.Pending" />
+    <column name="UserName" dataType="String" fieldSize="50" />
+    <column name="UserMail" dataType="String" fieldSize="50" />
+    <column name="UserWeb" dataType="String" fieldSize="50" />
+    <column name="UserIM" dataType="String" fieldSize="50" />
+    <column name="PostIp" dataType="String" fieldSize="50" />
+    <column name="PostTime" dataType="Int64" />
+    <column name="ChannelId" dataType="String" fieldSize="32" />
+  </table>
+  <table name="Doc">
+    <column name="DocId" dataType="String" fieldSize="32" isPrimary="true" />
+    <column name="Alias" dataType="String" fieldSize="30" />
+    <column name="Subject" dataType="String" fieldSize="100" />
+    <column name="FromName" dataType="String" fieldSize="50" />
+    <column name="FromUrl" dataType="String" fieldSize="100" />
+    <column name="BodyAbstract" dataType="String" fieldSize="500" />
+    <column name="Body" dataType="String" fieldSize="2000" />
+    <column name="CategoryId" dataType="String" fieldSize="32" />
+    <column name="Tag" dataType="String" fieldSize="50" />
+    <column name="PostTime" dataType="Int64" />
+    <column name="UpdateTime" dataType="Int64" />
+    <column name="ReadCount" dataType="Int32" />
+    <column name="CommentCount" dataType="Int32" />
+    <column name="Attribute" dataType="Int32" />
+    <column name="Priority" dataType="Int32" />
+    <column name="EnableUbb" dataType="Boolean" />
+    <column name="ContentMode" dataType="ContentModeEnum" defaultValue="ContentModeEnum.Text" />
+    <column name="Status" dataType="DocStatusEnum" defaultValue="DocStatusEnum.Private" />
+    <column name="ChannelId" dataType="String" fieldSize="32" />
+  </table>
+</tables>
