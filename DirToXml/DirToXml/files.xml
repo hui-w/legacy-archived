@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="schema.xslt"?>
+<Files>
+  <File Name="DirToXml.csproj" Length="2489" Extension=".csproj" FullName="D:\SourceDepot\DirToXml\DirToXml\DirToXml.csproj" IsReadOnly="false" CreationTime="2012-05-19T22:23:26.2700407+08:00" LastAccessTime="2014-07-29T20:37:59.8606278+08:00" LastWriteTime="2012-05-19T22:23:28.126444+08:00" />
+  <File Name="DirToXml.csproj.user" Length="248" Extension=".user" FullName="D:\SourceDepot\DirToXml\DirToXml\DirToXml.csproj.user" IsReadOnly="false" CreationTime="2012-05-19T22:25:05.7103128+08:00" LastAccessTime="2014-07-29T20:37:59.8675818+08:00" LastWriteTime="2012-05-19T22:36:38.0905312+08:00" />
+  <File Name="DirToXml.exe" Length="6144" Extension=".exe" FullName="D:\SourceDepot\DirToXml\DirToXml\DirToXml.exe" IsReadOnly="false" CreationTime="2016-09-17T14:40:56.347659+08:00" LastAccessTime="2016-09-17T14:40:56.347659+08:00" LastWriteTime="2012-05-19T22:54:11.6656813+08:00" />
+  <File Name="Program.cs" Length="2174" Extension=".cs" FullName="D:\SourceDepot\DirToXml\DirToXml\Program.cs" IsReadOnly="false" CreationTime="2012-05-19T22:23:26.2076406+08:00" LastAccessTime="2014-07-29T20:37:59.8776351+08:00" LastWriteTime="2012-05-19T22:54:10.93248+08:00" />
+</Files>

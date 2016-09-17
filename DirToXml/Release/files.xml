@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="schema.xslt"?>
+<Files>
+  <File Name="DirToXml.exe" Length="6144" Extension=".exe" FullName="D:\SourceDepot\DirToXml\Release\DirToXml.exe" IsReadOnly="false" CreationTime="2016-09-17T14:40:56.347659+08:00" LastAccessTime="2016-09-17T14:40:56.347659+08:00" LastWriteTime="2012-05-19T22:54:11.6656813+08:00" />
+  <File Name="files.xml" Length="2270" Extension=".xml" FullName="D:\SourceDepot\DirToXml\Release\files.xml" IsReadOnly="false" CreationTime="2012-05-19T22:36:39.0421329+08:00" LastAccessTime="2014-07-29T20:37:59.9336413+08:00" LastWriteTime="2016-09-17T14:39:34.09294+08:00" />
+  <File Name="schema.xslt" Length="678" Extension=".xslt" FullName="D:\SourceDepot\DirToXml\Release\schema.xslt" IsReadOnly="false" CreationTime="2012-05-19T22:43:03.2771065+08:00" LastAccessTime="2014-07-29T20:37:59.9436528+08:00" LastWriteTime="2012-05-19T22:51:25.3069891+08:00" />
+</Files>
