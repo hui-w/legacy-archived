@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Dynamic Drive DHTML Scripts- Jason's Date Input Calendar</title>
+
+    <script type="text/javascript" src="calendarDateInput.js"></script>
+
+</head>
+<body>
+    <div id="scriptheader">
+        <span class="compatlist">FF1+ IE5+ Opr7+</span>
+        <h3>
+            Jason's Date Input Calendar</h3>
+    </div>
+    <div id="scriptheaderFoot">
+        <span class="rightit"></span><b>Author:</b> Jason Moon | <a href="http://calendar.moonscript.com/dateinput.cfm">
+            Homepage</a></div>
+    <p align="left">
+        <b>Note:</b> Updated Sept 20th, 05' for various improvements.</p>
+    <p align="left">
+        <strong>Description: </strong>Jason's Date Input Calendar is designed specifically
+        to make entering date values into forms as easy as can be! It's different from most
+        other similar scripts in the following two ways:</p>
+    <ul>
+        <li>The script generates not only the popup calendar to easily select a date, but the
+            corresponding form field as well, made up of select menus and text boxes.</li>
+        <li>The script then creates a corresponding hidden field containing the actual chosen
+            date for easy passing along with the rest of your form.</li>
+        <li>Supports multiple calendar inputs in the same form/page.</li>
+        <li>Allows date input either via the popup calendar, or by the user directly inputting
+            the desired date (via select menu and text box).</li>
+        <li>More supported date formates, including the popular mySQL <strong>YYYY-MM-DD</strong>
+            <font color="#FF0000">New!</font></li>
+        <li>Wider browser support, including the IE on the Mac. <font color="#FF0000">New!</font></li>
+        <li>Works around IE&#39;s bug of select-lists showing through layers.</li>
+    </ul>
+    <p align="left">
+        In other words, this script takes the hassle out of not only selecting a date inside
+        forms, but creating the appropriate HTML and packaging that value for easy passing
+        as well! The script works in all modern browsers- IE5+, NS6/ Firefox, Opera 7+.
+        Nice!</p>
+    <p align="left">
+        <strong>Demo:</strong></p>
+    <p align="left">
+        <!--webbot bot="HTMLMarkup" startspan -->
+        <form>
+
+            <script>DateInput('birth_date', true, 'DD-MON-YYYY')</script>
+
+        </form>
+        <!--webbot bot="HTMLMarkup" endspan i-checksum="63924" -->
+    </p>
+    <hr size="1">
+    <p align="left">
+        <strong>Directions: </strong><a target="win2" href="jasoncalendar_dev.htm">
+            <img src="../dview.gif" width="115" height="19" alt="Developer's View" border="0"></a></p>
+    <p align="left">
+        <strong>Step 1:</strong> Insert the below into the &lt;HEAD&gt; section of your
+        page:</p>
+    <form>
+        <p>
+            <a class="selectall" href="javascript:highlight(1)">Select All</a><br>
+            <textarea class="codecontainer" rows="8" name="S1" cols="45" wrap="virtual"><script type="text/javascript" src="calendarDateInput.js">
+
+/***********************************************
+* Jason's Date Input Calendar- By Jason Moon http://calendar.moonscript.com/dateinput.cfm
+* Script featured on and available at http://www.dynamicdrive.com
+* Keep this notice intact for use.
+***********************************************/
+
+</script></textarea></p>
+    </form>
+    <p align="left">
+        The above references an external .js file. Download <b><a href="calendarDateInput.js">
+            calendarDateInput.js</a></b> (by right clicking, and selecting &quot;Save As&quot;),
+        and upload to your webpage directory. It also uses 3 images, which you should download
+        by right clicking, and selecting &quot;Save As&quot;:</p>
+    <p align="left">
+        <img border="0" src="calendar.jpg" width="16" height="15">
+        <img border="0" src="prev.gif" width="5" height="9">
+        <img border="0" src="next.gif" width="5" height="9"></p>
+    <p align="left">
+        <strong>Step 2:</strong> Once the above script is added, adding a popup Calendar
+        field to your form is a one step process. Take a look at the below example:</p>
+    <p class="codehighlight" align="left">
+        &lt;form&gt;<br>
+        <font color="#FF0000">
+            <br>
+            &lt;script&gt;DateInput('orderdate', true, 'DD-MON-YYYY')&lt;/script&gt;</font><br>
+        <br>
+        &lt;input type=&quot;button&quot; onClick=&quot;alert(this.form.orderdate.value)&quot;
+        value=&quot;Show date value passed&quot;&gt;<br>
+        <br>
+        &lt;/form&gt;</p>
+    <p align="left">
+        The result is:</p>
+    <p align="left">
+        <!--webbot bot="HTMLMarkup" startspan -->
+        <form>
+
+            <script>DateInput('orderdate', true, 'DD-MON-YYYY')</script>
+
+            <p>
+                <input type="button" onclick="alert(this.form.orderdate.value)" value="Show hidden date field"></p>
+        </form>
+        <!--webbot bot="HTMLMarkup" endspan i-checksum="18010" -->
+    </p>
+    <p align="left">
+        As you can see, simply by including function &quot;DateInput()&quot; in the desired
+        place inside your form, the script will auto generate the appropriate HTML and corresponding
+        popup calendar for it. It will also create a hidden field using your designated
+        name (in this case, &quot;orderdate&quot;) containing the selected date's value.
+        Click on the form button to look inside this hidden field at any time.</p>
+    <h3 align="left">
+        <u>Additional Information</u></h3>
+    <p align="left">
+        Below describes function &quot;DateInput()&quot; in detail, which you need to understand
+        to take full advantage of this script:</p>
+    <div align="left">
+        <pre align="left">DateInput(DateName, Required*, DateFormat*, DefaultDate*)</pre>
+    </div>
+    <p align="left">
+        All parameters with a * are <b>optional</b>, and if not passed in a value, the default
+        value is used.</p>
+    <table border="1" width="100%" cellspacing="0" cellpadding="3">
+        <tr>
+            <td width="20%" bgcolor="#E8E8E8">
+                <b>DateName</b></td>
+            <td width="80%">
+                STRING - required. Name of the hidden form element to store the selected, formatted
+                date&nbsp; You do NOT need to create this field manually in your form.</td>
+        </tr>
+        <tr>
+            <td width="20%" bgcolor="#E8E8E8" valign="top">
+                <b>Required</b></td>
+            <td width="80%">
+                BOOLEAN - optional. Default = FALSE (TRUE or FALSE). Determines whether user is
+                required to make a date selection. If set to false (default), an extra &quot;blank&quot;
+                field appears at the top of the month select menu (above January), in which selecting
+                it causes nothing to be passed to the form.</td>
+        </tr>
+        <tr>
+            <td width="20%" bgcolor="#E8E8E8" valign="top">
+                <b>DateFormat</b></td>
+            <td width="80%">
+                STRING- optional. Default is set as a global variable in the script (MM/DD/YYYY
+                on this page). The format of the generated Date value. It can be one of the following:<ul>
+                    <li>YYYYMMDD </li>
+                    <li>YYYY-MM-DD * </li>
+                    <li>YYYY-DD-MM * </li>
+                    <li>YYYY/MM/DD * </li>
+                    <li>YYYY/DD/MM * </li>
+                    <li>YYYY-DD-MON * &nbsp; ** </li>
+                    <li>YYYY-MON-DD * &nbsp; ** </li>
+                    <li>MM-DD-YYYY * </li>
+                    <li>DD-MM-YYYY * </li>
+                    <li>MM/DD/YYYY * </li>
+                    <li>DD/MM/YYYY * </li>
+                    <li>DD-MON-YYYY * &nbsp; ** </li>
+                    <li>MON-DD-YYYY * &nbsp; ** </li>
+                </ul>
+                * &nbsp; 2-digit year can be used instead of 4-digit year<br>
+                ** 3-character month name abbreviation can also be specified as MMM.</td>
+        </tr>
+        <tr>
+            <td width="20%" bgcolor="#E8E8E8">
+                <b>DefaultDate</b></td>
+            <td width="80%">
+                STRING- optional. The default date displayed in the drop down menus. If none is
+                specified, today's date is used.</td>
+        </tr>
+    </table>
+    <p align="left">
+        With that in mind, here are a few examples:<form>
+            <p align="left">
+                <!--webbot bot="HTMLMarkup" startspan -->
+
+                <script>DateInput('eg1')</script>
+
+                <!--webbot bot="HTMLMarkup" endspan i-checksum="25840" -->
+                <b>Code:</b> &lt;script&gt;DateInput('birthdate')&lt;/script&gt;</p>
+            <p align="left">
+                <!--webbot bot="HTMLMarkup" startspan -->
+
+                <script>DateInput('eg2', true)</script>
+
+                <!--webbot bot="HTMLMarkup" endspan i-checksum="23109" -->
+                <b>Code: </b>&lt;script&gt;DateInput('orderdate', true)&lt;/script&gt;</p>
+            <p align="left">
+                <!--webbot bot="HTMLMarkup" startspan -->
+
+                <script>DateInput('eg3', true, 'DD-MON-YYYY')</script>
+
+                <!--webbot bot="HTMLMarkup" endspan i-checksum="55094" -->
+                <b>Code: </b>&lt;script&gt;DateInput('todaydate', true, 'DD-MON-YYYY')&lt;/script&gt;</p>
+            <!--webbot bot="HTMLMarkup" startspan -->
+
+            <script>DateInput('eg4', true, 'DD-MON-YYYY', '28-JUN-2003')</script>
+
+            <!--webbot bot="HTMLMarkup" endspan i-checksum="14427" -->
+            <b>Code: </b>&lt;script&gt;DateInput('todaydate', true, 'DD-MON-YYYY', '28-JUN-2003')&lt;/script&gt;
+        </form>
+        <p align="left">
+            <b>-Customizable variables</b><p align="left">
+                Inside the .js file you downloaded, there are also a few variables at the top you
+                can customize:</p>
+            <ul>
+                <li>Default date format, if none is supplied in the call to the &quot;DateInput&quot;
+                    function </li>
+                <li>Number of seconds to wait before the calendar will disappear </li>
+                <li>The year at which to send 2-digit years to the 21st century </li>
+                <li>Text to display in the 1st month list item when the date isn't required.</li>
+                <li>Calendar attributes
+                    <ul>
+                        <li>Font size and style </li>
+                        <li>Background color </li>
+                        <li>Cell dimensions </li>
+                        <li>Top row background color </li>
+                        <li>Highlighted day background color </li>
+                    </ul>
+                </li>
+                <li>URL to calendar images.</li>
+            </ul>
+        </p>
+    </p>
+</body>
+</html>
